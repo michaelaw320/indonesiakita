@@ -11,7 +11,6 @@
 		<form class="form"> 
 			Jenis Logistik: 
 		</form>
-		<button class="submitbutton" type="submit">Login</button>
 	</div>
 @stop
 @section("javascript")
