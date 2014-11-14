@@ -22,7 +22,7 @@
 		  </div><!-- /.container-fluid -->
 		</nav>
 		
-		<button class="submitbutton" type="submit">Login</button>
+		<button class="btn btn-primary" type="submit">Bagi Logistik</button>
 	</div>
 @stop
 @section("javascript")

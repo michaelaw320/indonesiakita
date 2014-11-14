@@ -22,6 +22,9 @@
 		  </div><!-- /.container-fluid -->
 		</nav>
 	</div>
+	
+	<!-- TODO: import modulnya kak ikhsan untuk page update, ganti angkanya dengan form text kosong placeholdernya nilai originalnya -->
+	
 @stop
 @section("javascript")
 	<script type="text/javascript">

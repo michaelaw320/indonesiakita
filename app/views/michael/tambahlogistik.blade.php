@@ -9,7 +9,12 @@
 		<h1> Tambah data logistik </h1>
 		<br>
 		<form class="form"> 
-			Jenis Logistik: 
+			Jenis Logistik: <select class="form-control">
+						  <option>Beras</option>
+						  <option>Air</option>
+						  <option>Other</option>
+						  <!-- TODO nanti kalau dipilih other dia bisa input yg laen, tolong dilengkapin -->
+						</select>
 		</form>
 	</div>
 @stop
