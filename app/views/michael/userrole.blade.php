@@ -12,20 +12,25 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			  <ul class="nav navbar-nav">
-				<li><a href="#">Lihat Logistik</a></li>
-				<li><a href="#">Update Data</a></li>
-				<li class="active"><a href="#">Role Assignment<span class="sr-only">(current)</span></a></li>
-				<li><a href="#">Lihat Request</a></li>
-				<li><a href="#">Pembentukan Tim Darurat</a></li>
+				<li><a href="logistik">Lihat Logistik</a></li>
+				<li><a href="update">Update Data</a></li>
+				<li class="active"><a href="userrole">Pembagian Tugas<span class="sr-only">(current)</span></a></li>
+				<li><a href="request">Lihat Request</a></li>
+				<li><a href="timdarurat">Pembentukan Tim Darurat</a></li>
 			  </ul>
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
 		
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-6" align="center">
 			  <table class="table">
 				<thead>
+				  <tr>
+					<td colspan="5">
+						<img src="{{ URL::asset('img/cover_pembagian_tugas.jpg') }}">
+					</td>
+				  </tr>
 				  <tr>
 					<th>#</th>
 					<th>First Name</th>

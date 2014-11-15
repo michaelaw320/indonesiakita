@@ -14,13 +14,23 @@
 			  <ul class="nav navbar-nav">
 				<li class="active"><a href="logistik">Lihat Logistik<span class="sr-only">(current)</span></a></li>
 				<li><a href="update">Update Data</a></li>
-				<li><a href="userrole">Role Assignment</a></li>
+				<li><a href="userrole">Pembagian Tugas</a></li>
 				<li><a href="request">Lihat Request</a></li>
-				<li><a href="#">Pembentukan Tim Darurat</a></li>
+				<li><a href="timdarurat">Pembentukan Tim Darurat</a></li>
 			  </ul>
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
+		
+		<div id="lihatLogistik">
+			<table class="table">
+				<tr>
+					<td>
+						<img src="{{ URL::asset('img/cover_lihat_logistik.jpg') }}">
+					</td>
+				</tr>
+			</table>
+		</div>
 		
 		<button class="btn btn-primary" type="submit">Bagi Logistik</button>
 	</div>

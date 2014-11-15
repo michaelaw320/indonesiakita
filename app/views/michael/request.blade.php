@@ -12,17 +12,26 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			  <ul class="nav navbar-nav">
-				<li><a href="#">Lihat Logistik</a></li>
-				<li><a href="#">Update Data</a></li>
-				<li><a href="#">Role Assignment</a></li>
-				<li class="active"><a href="#">Lihat Request<span class="sr-only">(current)</span></a></li>
-				<li><a href="#">Pembentukan Tim Darurat</a></li>
+				<li><a href="logistik">Lihat Logistik</a></li>
+				<li><a href="update">Update Data</a></li>
+				<li><a href="userrole">Pembagian Tugas</a></li>
+				<li class="active"><a href="request">Lihat Request<span class="sr-only">(current)</span></a></li>
+				<li><a href="timdarurat">Pembentukan Tim Darurat</a></li>
 			  </ul>
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
 		
 		<!-- TODO modify code below, user request seperti carousel di page contoh -->
+		<div id="lihatrequest">
+			<table class="table">
+				<tr>
+					<td>
+						<img src="{{ URL::asset('img/cover_lihat_request.jpg') }}">
+					</td>
+				</tr>
+			</table>
+		</div>
 		
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">

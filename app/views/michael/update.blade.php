@@ -12,15 +12,25 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			  <ul class="nav navbar-nav">
-				<li><a href="#">Lihat Logistik</a></li>
-				<li class="active"><a href="#">Update Data<span class="sr-only">(current)</span></a></li>
-				<li><a href="#">Role Assignment</a></li>
-				<li><a href="#">Lihat Request</a></li>
-				<li><a href="#">Pembentukan Tim Darurat</a></li>
+				<li><a href="logistik">Lihat Logistik</a></li>
+				<li class="active"><a href="update">Update Data<span class="sr-only">(current)</span></a></li>
+				<li><a href="userrole">Pembagian Tugas</a></li>
+				<li><a href="request">Lihat Request</a></li>
+				<li><a href="timdarurat">Pembentukan Tim Darurat</a></li>
 			  </ul>
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
+	</div>
+	
+	<div id="lihatLogistik">
+		<table class="table">
+			<tr>
+				<td>
+					<img src="{{ URL::asset('img/cover_update_data.jpg') }}">
+				</td>
+			</tr>
+		</table>
 	</div>
 	
 	<!-- TODO: import modulnya kak ikhsan untuk page update, ganti angkanya dengan form text kosong placeholdernya nilai originalnya -->
