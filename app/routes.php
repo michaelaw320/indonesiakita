@@ -23,3 +23,21 @@ Route::get('bencana/user/relawan', [
 Route::get('bencana/user/koordinator', [
 	"uses" => "UserController@showMain2",
 ]);
+Route::get('bencana/admin/logistik', [
+	"uses" => "AdminController@showLogistic",
+]);
+Route::get('bencana/admin/tambahlogin', [
+	"uses" => "AdminController@showAddLogin",
+]);
+Route::get('bencana/admin/update', [
+	"uses" => "AdminController@showUpdate",
+]);
+Route::get('bencana/admin/userrole', [
+	"uses" => "AdminController@showUserRole",
+]);
+Route::get('bencana/admin/request', [
+	"uses" => "AdminController@showRequest",
+]);
+Route::get('bencana/admin/timdarurat', [
+	"uses" => "AdminController@showTimDarurat",
+]);
