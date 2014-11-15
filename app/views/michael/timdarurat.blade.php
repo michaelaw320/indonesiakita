@@ -12,11 +12,11 @@
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			  <ul class="nav navbar-nav">
-				<li><a href="#">Lihat Logistik</a></li>
-				<li><a href="#">Update Data</a></li>
-				<li><a href="#">Role Assignment</a></li>
-				<li><a href="#">Lihat Request</a></li>
-				<li class="active"><a href="#">Pembentukan Tim Darurat<span class="sr-only">(current)</span></a></li>
+				<li><a href="logistik">Lihat Logistik</a></li>
+				<li><a href="update">Update Data</a></li>
+				<li><a href="userrole">Pembagian Tugas</a></li>
+				<li><a href="request">Lihat Request</a></li>
+				<li class="active"><a href="timdarurat">Pembentukan Tim Darurat<span class="sr-only">(current)</span></a></li>
 			  </ul>
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
@@ -27,11 +27,12 @@
 				<tbody >
 					<tr id="judulTabel">
 						<td colspan="4">
-							<font color="3CA8F5"><h2>Pembentukan Tim Darurat</h2></font>
+							<!-- <font color="3CA8F5"><h2>Pembentukan Tim Darurat</h2></font> -->
+							<img src="{{ URL::asset('img/cover_tim_darurat2.jpg') }}" width="1140">
 						</td>
 					</tr>
 					<tr id="grupKartu">
-						<th id="anggota1" bgcolor="FA610F">
+						<th id="anggota1" bgcolor="040F40">
 							<center><font color="white">
 							<img src="{{ URL::asset('img/person1.jpg') }}"  width="200" height="130">
 							<h4>Bianca Swift</h4><br>
@@ -42,7 +43,7 @@
 							<p>Minor 	: Terapik</p>
 							</center></font>
 						</th>
-						<th id="anggota2" bgcolor="FABB0F">
+						<th id="anggota2" bgcolor="071A6B">
 							<center><font color="white">
 							<img src="{{ URL::asset('img/person2.jpg') }}"  width="200" height="130">
 							<h4>Jason Miraz</h4><br>
@@ -53,7 +54,7 @@
 							<p>Minor 	: Medik</p>
 							</center></font>
 						</th>
-						<th id="anggota3" bgcolor="A4FA0F">
+						<th id="anggota3" bgcolor="0D2A6E">
 							<center><font color="white">
 							<img src="{{ URL::asset('img/person3.jpg') }}"  width="200" height="130">
 							<h4>William Cruise</h4><br>
@@ -64,7 +65,7 @@
 							<p>Minor 	: -</p>
 							</center></font>
 						</th>
-						<th id="anggota4" bgcolor="0FC3FA">
+						<th id="anggota4" bgcolor="253C7A">
 							<center><font color="white">
 							<img src="{{ URL::asset('img/person4.jpg') }}"  width="200" height="130">
 							<h4>Jessica Andrew</h4><br>

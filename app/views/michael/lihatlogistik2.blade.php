@@ -13,8 +13,8 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			  <ul class="nav navbar-nav">
 				<li class="active"><a href="#">Lihat Logistik<span class="sr-only">(current)</span></a></li>
-				<li><a href="#">Update Data</a></li>
-				<li><a href="#">Role Assignment</a></li>
+				<li><a href="update">Update Data</a></li>
+				<li><a href="#">Pembagian Tugas</a></li>
 				<li><a href="#">Lihat Request</a></li>
 				<li><a href="#">Pembentukan Tim Darurat</a></li>
 			  </ul>
