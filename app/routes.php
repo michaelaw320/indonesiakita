@@ -17,3 +17,18 @@ Route::get('/', [
 Route::get('bencana/donasi', [
 	"uses" => "DisasterController@showDonate",
 ]);
+Route::get('bencana/admin/logistik', [
+	"uses" => "AdminController@showLogistic",
+]);
+Route::get('bencana/admin/tambahlogin', [
+	"uses" => "AdminController@showAddLogin",
+]);
+Route::get('bencana/admin/update', [
+	"uses" => "AdminController@showUpdate",
+]);
+Route::get('bencana/admin/userrole', [
+	"uses" => "AdminController@showUserRole",
+]);
+Route::get('bencana/admin/request', [
+	"uses" => "AdminController@showRequest",
+]);
