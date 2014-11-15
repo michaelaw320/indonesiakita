@@ -32,3 +32,6 @@ Route::get('bencana/admin/userrole', [
 Route::get('bencana/admin/request', [
 	"uses" => "AdminController@showRequest",
 ]);
+Route::get('bencana/admin/timdarurat', [
+	"uses" => "AdminController@showTimDarurat",
+]);

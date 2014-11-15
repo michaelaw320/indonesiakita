@@ -33,7 +33,7 @@
 					<tr id="grupKartu">
 						<th id="anggota1" bgcolor="FA610F">
 							<center><font color="white">
-							<img src="img/person1.jpg"  width="200" height="130">
+							<img src="{{ URL::asset('img/person1.jpg') }}"  width="200" height="130">
 							<h4>Bianca Swift</h4><br>
 							<p>32 y.o.</p>
 							<p>165cm / 55kg</p>
@@ -44,7 +44,7 @@
 						</th>
 						<th id="anggota2" bgcolor="FABB0F">
 							<center><font color="white">
-							<img src="img/person2.jpg"  width="200" height="130">
+							<img src="{{ URL::asset('img/person2.jpg') }}"  width="200" height="130">
 							<h4>Jason Miraz</h4><br>
 							<p>35 y.o.</p>
 							<p>180cm / 80kg</p>
@@ -55,7 +55,7 @@
 						</th>
 						<th id="anggota3" bgcolor="A4FA0F">
 							<center><font color="white">
-							<img src="img/person3.jpg"  width="200" height="130">
+							<img src="{{ URL::asset('img/person3.jpg') }}"  width="200" height="130">
 							<h4>William Cruise</h4><br>
 							<p>33 y.o.</p>
 							<p>185cm / 85kg</p>
@@ -66,7 +66,7 @@
 						</th>
 						<th id="anggota4" bgcolor="0FC3FA">
 							<center><font color="white">
-							<img src="img/person4.jpg"  width="200" height="130">
+							<img src="{{ URL::asset('img/person4.jpg') }}"  width="200" height="130">
 							<h4>Jessica Andrew</h4><br>
 							<p>36 y.o.</p>
 							<p>163cm / 53kg</p>
