@@ -60,10 +60,10 @@
 					<tr>
 						<td>
 							<p>
-								Budy: Berhasil menyelamatkan 2 orang yang tertimbun di lokasi XXXX-YY343. (11:30AM)
+								Jill: Berhasil menyelamatkan 2 orang yang tertimbun di Lat -7.8904922 Long 103.609528 di Komplek Bunga. (10:30AM)
 							</p>
 							<p>
-								Daniel: Butuh bantuan medik di posisi XX-YY340. Ada korban mengalami luka bakar yang serius. (11:32AM)
+								Jack: Butuh bantuan medik di Lat -6.7304922 Long 107.209528 di SMAN 3. Ada korban mengalami luka bakar yang serius. (11:32AM)
 							</p>
 						</td>
 					</tr>
@@ -72,10 +72,10 @@
 					<tr>
 						<td>
 							<p>
-								Budy: Berhasil menyelamatkan 2 orang yang tertimbun di lokasi XXXX-YY343. (11:30AM)
+								Charisma: Segera pergi ke lokasi Lat -7.8904922 Long 103.609528 di Komplek Bunga. Butuh sekitar 5 orang, ada korban yang tertimbun (10:00AM)
 							</p>
 							<p>
-								Daniel: Butuh bantuan medik di posisi XX-YY340. Ada korban mengalami luka bakar yang serius. (11:32AM)
+								Charisma: Segera pergi ke lokasi Lat -6.7304922 Long 107.209528 di SMAN 3. Butuh bantuan medis, korban mengalami luka bakar. (11:33AM)
 							</p>
 						</td>
 					</tr>
@@ -107,5 +107,36 @@
 				}
 			});
 		});
+	</script>
+	<script>
+	var x = document.getElementById("location");
+	function getLocation() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+		} else {
+			x.innerHTML = "Geolocation is not supported by this browser.";
+		}
+	}
+	function showPosition(position) {
+		x.innerHTML = "Latitude: " + position.coords.latitude + 
+		"<br>Longitude: " + position.coords.longitude; 
+	}
+	</script>
+	<script type="text/javascript">
+		/* Fill in your javascript */
+		var x = document.getElementById("location");
+
+		function getLocation() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			} else { 
+				x.innerHTML = "Geolocation is not supported by this browser.";
+			}
+		}
+
+		function showPosition(position) {
+			x.innerHTML = "Latitude: " + position.coords.latitude + 
+			" Longitude: " + position.coords.longitude;	
+		}
 	</script>
 @stop
