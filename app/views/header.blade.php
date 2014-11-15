@@ -7,9 +7,6 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
-				
-			</a>
 			<img src="{{ URL::asset('img/logo.jpg') }}">
 		</div>
 		<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
