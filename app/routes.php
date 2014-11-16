@@ -44,3 +44,6 @@ Route::get('bencana/admin/request', [
 Route::get('bencana/admin/timdarurat', [
 	"uses" => "AdminController@showTimDarurat",
 ]);
+Route::get('bencana/admin/entri', [
+	"uses" => "AdminController@showTambahLogistik",
+]);
