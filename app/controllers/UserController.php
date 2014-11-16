@@ -14,13 +14,13 @@ class UserController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
-
-	public function showMain()
+	
+	public function showKoordinator()
 	{
-		return View::make('kevin.main');
+		return View::make('kevin.koordinator');
 	}
-	public function showMain2()
+	public function showRelawan()
 	{
-		return View::make('kevin.main2');
+		return View::make('kevin.relawan');
 	}
 }

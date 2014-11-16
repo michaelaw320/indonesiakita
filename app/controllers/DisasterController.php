@@ -14,10 +14,12 @@ class DisasterController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
-
+	public function showIndex()
+	{
+		return View::make('ikhsan.disaster');
+	}
 	public function showDonate()
 	{
 		return View::make('willy.donate');
 	}
-
 }

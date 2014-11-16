@@ -1,7 +1,7 @@
 @extends("layout")
 @section("css")
 	<style type="text/css">
-		table {
+		.tableContainer {
 			border: 1px solid #DDD;
 			border-top: 0px;
 			width: 100%;
@@ -12,13 +12,13 @@
 	<div class="starter-template">
 		<h1> Halo Charisma, </h1>
 		<div class="row">
-			<div class="col-sm-9 col-md-9 main">
+			<div class="col-sm-9 col-md-9">
 				<p>Lokasi anda adalah
-					<span id = "location">Press Refresh Button</span>
+					<span id="location">Press Refresh Button</span>
 					<button onclick="getLocation()"><img src="{{ URL::asset('img/refresh.png') }}" width = "30px" height = "25px"></button>
 				</p>
 				<p>Anggota anda adalah : </p>
-				<table class="table table-striped table-bordered table-hover table-condensed" width = "50%">
+				<table class="table table-striped table-bordered table-hover table-condensed">
 					<tr>
 						<th>Nama</th>
 						<th>Status</th> 
@@ -51,12 +51,12 @@
 					</tr>
 				</table>
 			</div>
-			<div class="col-sm-3 col-md-3 sidebar-right">
+			<div class="col-sm-3 col-md-3">
 				<ul class="nav nav-tabs" role="tablist">
 					<li id="laporan" role="presentation" class="active tab"><a href="#">Laporan</a></li>
 					<li id="notifikasi" role="presentation" class="tab"><a href="#">Notifikasi</a></li>
 				</ul>
-				<table id="laporanContainer">
+				<table class="tableContainer" id="laporanContainer">
 					<tr>
 						<td>
 							<p>
@@ -68,7 +68,7 @@
 						</td>
 					</tr>
 				</table>
-				<table id="notifikasiContainer">
+				<table class="tableContainer" id="notifikasiContainer">
 					<tr>
 						<td>
 							<p>

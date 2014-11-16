@@ -14,14 +14,17 @@
 Route::get('/', [
 	"uses" => "HomeController@showWelcome",
 ]);
+Route::get('bencana', [
+	"uses" => "DisasterController@showIndex",
+]);
 Route::get('bencana/donasi', [
 	"uses" => "DisasterController@showDonate",
 ]);
 Route::get('bencana/user/relawan', [
-	"uses" => "UserController@showMain",
+	"uses" => "UserController@showRelawan",
 ]);
 Route::get('bencana/user/koordinator', [
-	"uses" => "UserController@showMain2",
+	"uses" => "UserController@showKoordinator",
 ]);
 Route::get('bencana/admin/logistik', [
 	"uses" => "AdminController@showLogistic",
