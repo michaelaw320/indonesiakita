@@ -2,6 +2,9 @@
 @section("css")
 	<style type="text/css">
 		/* Fill in your css */
+		#btnUpdate{
+			width: 38%
+		}
 	</style>
 @stop
 @section("content")
@@ -105,7 +108,7 @@
 			</div>
 		</div>
 		
-		<button class="btn btn-primary" type="submit" align="center">UPDATE</button>
+		<button id="btnUpdate" class="btn btn-lg btn-success" type="submit" align="center">UPDATE</button>
 	
 	<!-- TODO: import modulnya kak ikhsan untuk page update, ganti angkanya dengan form text kosong placeholdernya nilai originalnya -->
 	
