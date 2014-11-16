@@ -29,6 +29,9 @@ Route::get('bencana/user/koordinator', [
 Route::get('bencana/admin/logistik', [
 	"uses" => "AdminController@showLogistic",
 ]);
+Route::get('bencana/admin/logistik/bagilogistik', [
+	"uses" => "AdminController@showBagiLogistik",
+]);
 Route::get('bencana/admin/tambahlogin', [
 	"uses" => "AdminController@showAddLogin",
 ]);

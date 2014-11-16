@@ -43,4 +43,8 @@ class AdminController extends BaseController {
 	{
 		return View::make('michael.tambahlogistik');
 	}
+	public function showBagiLogistik()
+	{
+		return View::make('michael.lihatlogistik2');
+	}
 }
