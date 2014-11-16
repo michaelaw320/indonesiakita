@@ -2,6 +2,9 @@
 @section("css")
 	<style type="text/css">
 		/* Fill in your css */
+		#bagiLogistik {
+			width: 100%;
+		}
 	</style>
 @stop
 @section("content")
@@ -21,18 +24,140 @@
 			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
-		
-		<div id="lihatLogistik">
-			<table class="table">
-				<tr>
-					<td>
-						<img src="{{ URL::asset('img/cover_lihat_logistik.jpg') }}">
-					</td>
-				</tr>
-			</table>
+		<table class="table table-condensed" style="display: inline-block;">
+			<tr>
+				<td colspan="2">
+					<img src="{{ URL::asset('img/cover_lihat_logistik.jpg') }}">
+				</td>
+			</tr>
+		</table>
+		<div class="row">
+			<div class="col-sm-8 sidebar">
+				<table class="table table-condensed" cellpadding="20px">
+					<tr>
+						<td colspan="2">
+							<h3>Persediaan Logistik Saat Ini:</h3>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Makanan Kering:
+						</td>
+						<td>
+							120 Bungkus
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Susu Bayi:
+						</td>
+						<td>
+							30 Kaleng
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Mineral Galon:
+						</td>
+						<td>
+							35 Galon
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Mineral Botol:
+						</td>
+						<td>
+							250 Botol
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Set Alat Tukang:
+						</td>
+						<td>
+							25 Set
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Genset:
+						</td>
+						<td>
+							7 Buah
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Bensin:
+						</td>
+						<td>
+							120 Liter
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Solar:
+						</td>
+						<td>
+							120 Liter
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Set Pakaian Dewasa:
+						</td>
+						<td>
+							70 Pasang
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Set Pakaian Anak:
+						</td>
+						<td>
+							50 Pasang
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Set Pakaian Bayi:
+						</td>
+						<td>
+							20 Pasang
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Popok Bayi:
+						</td>
+						<td>
+							200 Buah
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="row-sm-8 col-sm-4">
+				<!-- Bagian Deskripsi Bencana -->
+				<h3>Bagi Logistik</h3>
+				<table class="table" >
+					<thead>
+						<tr>
+							<td>
+								TES
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<a id="bagiLogistik" href="bencana/donasi" class="btn btn-lg btn-success">Bagi Logistik</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>	
 		</div>
-		
-		<button class="btn btn-primary" type="submit">Bagi Logistik</button>
 	</div>
 @stop
 @section("javascript")

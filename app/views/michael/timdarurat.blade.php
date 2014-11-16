@@ -2,6 +2,9 @@
 @section("css")
 	<style type="text/css">
 		/* Fill in your css */
+		#btnBuatTim {
+			width: 30%;
+		}
 	</style>
 @stop
 @section("content")
@@ -36,7 +39,7 @@
 							<center><font color="white">
 							<img src="{{ URL::asset('img/person1.jpg') }}"  width="200" height="130">
 							<h4>Bianca Swift</h4><br>
-							<p>32 y.o.</p>
+							<p>32 tahun</p>
 							<p>165cm / 55kg</p>
 							<p>Alergi Dingin</p>
 							<p>Mayor	: Medik</p>
@@ -47,7 +50,7 @@
 							<center><font color="white">
 							<img src="{{ URL::asset('img/person2.jpg') }}"  width="200" height="130">
 							<h4>Jason Miraz</h4><br>
-							<p>35 y.o.</p>
+							<p>35 tahun</p>
 							<p>180cm / 80kg</p>
 							<p>Tidak ada penyakit</p>
 							<p>Mayor	: Ahli Geologi</p>
@@ -58,7 +61,7 @@
 							<center><font color="white">
 							<img src="{{ URL::asset('img/person3.jpg') }}"  width="200" height="130">
 							<h4>William Cruise</h4><br>
-							<p>33 y.o.</p>
+							<p>33 tahun</p>
 							<p>185cm / 85kg</p>
 							<p>Tidak ada penyakit</p>
 							<p>Mayor	: Jaringan IT</p>
@@ -69,7 +72,7 @@
 							<center><font color="white">
 							<img src="{{ URL::asset('img/person4.jpg') }}"  width="200" height="130">
 							<h4>Jessica Andrew</h4><br>
-							<p>36 y.o.</p>
+							<p>36 tahun</p>
 							<p>163cm / 53kg</p>
 							<p>Alergi Debu</p>
 							<p>Mayor	: Terapik</p>
@@ -82,7 +85,7 @@
 					</tr>
 					<tr id="tombol">
 						<td colspan="4">
-							<center><button class="btn btn-primary" type="submit">BENTUK TIM!</button></center>
+							<center><button id="btnBuatTim" class="btn btn-lg btn-success" type="submit">BENTUK TIM!</button></center>
 						</td>
 					</tr>
 				</tbody>
