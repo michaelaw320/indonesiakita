@@ -33,7 +33,7 @@
 			</table>
 		</div>
 		
-		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="9999999999">
         <ol class="carousel-indicators">
           <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
           <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -41,14 +41,94 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img data-src="holder.js/1140x500/auto/#777:#555/text:First slide" alt="First slide">
+            <div class="row">
+				<div class="col-md-6 col-md-offset-3" align="center">
+				  <table class="table">
+				  <td>
+					<img src="{{ URL::asset('img/applicant1.jpg') }}"  height="270" width="187">
+				  </td>
+				  <td><b>
+					Nama <br>
+					Umur <br>
+					Tinggi <br>
+					Berat Badan <br>
+					Catatan Medis <br>
+					Mayor <br>
+					Minor <br>
+					Asal Organisasi <br>
+					Link CV <br>
+				  </b></td>
+				  <td>
+					Oscar De La Hoya <br>
+					41 <br>
+					179cm <br>
+					75kg <br>
+					Tidak ada alergi <br>
+					Terapis <br>
+					Pertolongan Pertama <br>
+					WHO <br>
+					http://www.dropbox.com/ <br>
+				  </td>
+				  </table>
+				  <br>
+				Tentukan peran: 
+				  <select class="form-control">
+						  <option>Koordinator</option>
+						  <option>Relawan</option>
+						  <option>Petugas Gudang</option>
+				  </select>
+				  <br>
+				  <button type="button" class="btn btn-danger">Tolak</button>
+				  <button type="button" class="btn btn-primary">Terima</button>
+				  <br>
+				</div>
+			</div>
           </div>
           <div class="item">
-            <img data-src="holder.js/1140x500/auto/#666:#444/text:Second slide" alt="Second slide">
+            <div class="row">
+				<div class="col-md-6 col-md-offset-3" align="center">
+				  <table class="table">
+				  <td>
+					<img src="{{ URL::asset('img/applicant2.jpg') }}" height="270" width="187">
+				  </td>
+				  <td><b>
+					Nama <br> <br> <br>
+					Umur <br>
+					Tinggi <br>
+					Berat Badan <br>
+					Catatan Medis <br>
+					Mayor <br>
+					Minor <br>
+					Asal Organisasi <br>
+					Link CV <br>
+				  </b></td>
+				  <td>
+					Prof. Dr. Dr-Eng. dr. drg. ir. Reinaldo Michael Hasiandehlu, ST, MT, MCD, KFC, PHD, BMC, KYT <br>
+					20 <br>
+					179cm <br>
+					75kg <br>
+					Tidak ada alergi <br>
+					Terapis <br>
+					Pertolongan Pertama <br>
+					WHO <br>
+					http://www.dropbox.com/ <br>
+				  </td>
+				  </table>
+				  <br>
+				Tentukan peran: 
+				  <select class="form-control">
+						  <option>Koordinator</option>
+						  <option>Relawan</option>
+						  <option>Petugas Gudang</option>
+				  </select>
+				  <br>
+				  <button type="button" class="btn btn-danger">Tolak</button>
+				  <button type="button" class="btn btn-primary">Terima</button>
+				  <br>
+				</div>
+			</div>
           </div>
-          <div class="item">
-            <img data-src="holder.js/1140x500/auto/#555:#333/text:Third slide" alt="Third slide">
-          </div>
+          
         </div>
         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
