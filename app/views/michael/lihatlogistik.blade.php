@@ -144,14 +144,17 @@
 					<thead>
 						<tr>
 							<td>
-								TES
+								<p>Pembagian logistik terhadap 3 daerah lokasi bencana, yaitu:<br></p>
+								<p>1. Kecamatan Barastagi, Kabupaten Karo, Sumatera Utara<br></p>
+								<p>2. Desa Daulu<br></p>
+								<p>3. Desa Gurusinga</p>
 							</td>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td>
-								<a id="bagiLogistik" href="bencana/donasi" class="btn btn-lg btn-success">Bagi Logistik</a>
+								<a id="bagiLogistik" href="" class="btn btn-lg btn-success">Bagi Logistik</a>
 							</td>
 						</tr>
 					</tbody>
