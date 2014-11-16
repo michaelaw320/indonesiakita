@@ -13,10 +13,29 @@
 		<h1> Halo Charisma, </h1>
 		<div class="row">
 			<div class="col-sm-9 col-md-9">
-				<p>Lokasi anda adalah
-					<span id="location">Press Refresh Button</span>
-					<button onclick="getLocation()"><img src="{{ URL::asset('img/refresh.png') }}" width = "30px" height = "25px"></button>
-				</p>
+				<table>
+				<tr>
+					<td>
+						Lokasi anda adalah
+					</td>
+					<td colspan =2>
+						<span id="location">Press Refresh Button</span>
+						<button onclick="getLocation()"><img src="{{ URL::asset('img/refresh.png') }}" width = "30px" height = "25px"></button>
+					</td>
+					<tr>
+						<td>
+							Pasang Help di lokasi:
+						</td>
+						<td>
+							<input class="form-control" type="text" placeholder="Latitude">
+						</td>
+						<td>
+							<input class="form-control" type="text" placeholder="Longitude">
+						</td>
+					</tr>
+				</tr>
+				</table>
+				<br>
 				<p>Anggota anda adalah : </p>
 				<table class="table table-striped table-bordered table-hover table-condensed">
 					<tr>
