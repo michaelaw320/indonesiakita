@@ -46,8 +46,8 @@
 					<img src="{{ URL::asset('img/splash-sinabung-1.jpg') }}" alt="First slide">
 					<div class="container">
 						<div class="carousel-caption">
-							<h1>At least 16 dead after Indonesian volcano Mount Sinabung erupts</h1>
-							<p>The death toll from an Indonesian volcano that has been rumbling for months rose to 16 Sunday after rescuers found another charred corpse and a critically injured college student died in a hospital, officials said.</p>
+							<h1>Sedikitnya 16 orang meninggal karena terkena letusan gunung berapi Sinabung, Indonesia</h1>
+							<p>Korban tewas yang terkena dampak dari gunung berapi yang telah menampakkan keaktifannya sejak sebulan yang lalu meningkat menjadi 16 korban. Minggu setelah tim penyelamat menemukan mayat hangus dan seorang mahasiswa yang luka parah yang akhirnya meninggal di rumah sakit.</p>
 						</div>
 					</div>
 				</div>
@@ -55,8 +55,8 @@
 					<img src="{{ URL::asset('img/splash-sinabung-2.jpg') }}" alt="Second slide">
 					<div class="container">
 						<div class="carousel-caption">
-							<h1>Indonesian Authorities Prepare for Disaster</h1>
-							<p>A woman works in her field which has been covered by ash from eruption of mount.</p>
+							<h1>Pihak Berwenang Indonesia Telah Disiapkan Untuk Menghadapi Bencana Lainnya</h1>
+							<p>Seorang wanita yang bekerja di ladangnya yang telah ditutupi oleh abu dari erupsi gunung berapi.</p>
 						</div>
 					</div>
 				</div>
@@ -64,8 +64,8 @@
 					<img src="{{ URL::asset('img/splash-sinabung-3.jpg') }}" alt="Third slide">
 					<div class="container">
 						<div class="carousel-caption">							
-							<h1>Deadly volcanic eruption in Indonesia</h1>
-							<p>A motorist rides on a road covered in vocalic ash and mud, following a heavy ash fall from the eruption of Mount Sinabung on Jan. 12, 2014.</p>
+							<h1>Erupsi mematikan dari gunung berapi di Indonesia</h1>
+							<p>Seorang pengendara motor menjelajahi jalan yang telah tertutup abu vulkanik dan lumpur, diikuti dengan hujan abu tebal dari erupsi Gunung Berapi Sinabung pada 12 Januari 2014</p>
 						</div>
 					</div>
 				</div>
