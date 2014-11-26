@@ -4,6 +4,9 @@
 		#splash {
 			width: 100%;
 		}
+		#donateBtn {
+			width: 100%;
+		}
 	</style>
 @stop
 @section("content")
@@ -23,7 +26,7 @@
 			<div id="via_kartuKredit" class="well">
 				<form class="navbar-form" role="form">
 					<div class="row">
-						<div class="col-sm-6 col-md-6">
+						<div class="col-sm-4 col-md-4">
 							<h2>Detail Pembayaran</h2>
 							<div class="Field">
 								<h4>Nomor Kartu Kredit</h4>
@@ -67,7 +70,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-sm-6 col-md-6">
+						<div class="col-sm-5 col-md-5">
 							<h2>Nama dan Alamat Penagihan</h2>
 							<div class="Field">
 								<div class="form-group">
@@ -358,6 +361,20 @@
 									</div>
 								</div>
 							</div>
+						</div>
+						<div class="col-sm-3 col-md-3">
+							<h1>Finalisasi</h1>
+							<div class="Field">
+								<div class="form-group">
+									<h3>Jumlah Donasi
+										<div class="form-group">
+											Rp. <input type="text" class="form-control">
+										</div>
+									</h3>
+								</div>
+							</div>
+							<a id="donateBtn" href="bencana/donasi" class="btn btn-lg btn-success">Donasi</a>
+							
 						</div>
 					</div>
 				</form>

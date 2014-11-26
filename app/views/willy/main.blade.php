@@ -26,8 +26,7 @@
 		bgCanvas.src = 'img/map.jpg';
 		context.drawImage(bgCanvas, 0, 0, 1024, 366);
 		var markImg = new Image();
-		markImg.src = 'img/mark.png';
-		
+		markImg.src = 'img/mark.png';		
 		var marks = [];
 		marks.push({
 			x: 60,
@@ -41,9 +40,11 @@
 			x: 880,
 			y: 150,
 		});
+		console.log("marks");
 		$.each(marks, function(index, mark) {
 			context.drawImage(markImg, mark.x, mark.y);
 		});
+		console.log("marks");
 		canvas.addEventListener("mousemove", on_mousemove, false);
 		canvas.addEventListener("click", on_click, false);
 		//check if the mouse is over the link and change cursor style
