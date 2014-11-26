@@ -154,7 +154,7 @@
 					<tbody>
 						<tr>
 							<td>
-								<a id="bagiLogistik" href="" class="btn btn-lg btn-success">Bagi Logistik</a>
+								<a id="bagiLogistik" href="logistik/bagilogistik" class="btn btn-lg btn-success">Bagi Logistik</a>
 							</td>
 						</tr>
 					</tbody>
