@@ -33,6 +33,8 @@
 			</td>
 		</tr>
 	</table>
+			<h3>Berikut adalah hasil pembagian logistik berdasarkan daerah</h3>
+
 	<div class="row">
 		<div class="col-sm-12 sidebar">
 			<table class="table table-condensed" cellpadding="20px">
@@ -149,7 +151,7 @@
 				<tr>
 					<td colspan="3">
 						<br>
-						<center><a id="bagiLogistik" href="/" class="btn btn-lg btn-success">Eksekusi</a></center>
+						<center><a id="bagiLogistik" href="/" class="btn btn-lg btn-success">Cetak</a></center>
 					</td>
 				</tr>
 			</table>

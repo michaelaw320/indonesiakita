@@ -65,7 +65,7 @@
 								<div class="form-group">
 									<h4>CVV 3 Digit</h4>
 									<div class="form-group">
-										<input type="text" class="form-control">
+										<input type="password" class="form-control">
 									</div>
 								</div>
 							</div>
@@ -374,7 +374,9 @@
 								</div>
 							</div>
 							<a id="donateBtn" href="bencana/donasi" class="btn btn-lg btn-success">Donasi</a>
-							
+							<div style="padding-top: 10px;">
+								<img src="{{ URL::asset('img/verisign.jpg') }}" style="width:100%;">
+							</div>
 						</div>
 					</div>
 				</form>

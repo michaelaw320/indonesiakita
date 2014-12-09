@@ -1,161 +1,270 @@
 @extends("layout")
 @section("css")
 	<style type="text/css">
-		.tableContainer {
-			border: 1px solid #DDD;
-			border-top: 0px;
+		#map-canvas {
 			width: 100%;
+			height: 548px;
+		}
+		.mini-map-canvas {
+			width: 100%;
+			height: 200px;
+		}
+		.panel-google-plus {
+		    position: relative;
+		    border-radius: 0px;
+		    border: 1px solid rgb(216, 216, 216);
+		    font-family: 'Roboto', sans-serif;
+		}
+		.panel-google-plus > .dropdown {
+		    position: absolute;
+		    top: 5px;
+		    right: 15px;
+		}
+		.panel-google-plus > .dropdown > span > span {
+		    font-size: 10px;   
+		}
+		.panel-google-plus > .dropdown > .dropdown-menu {
+		    left: initial;
+		    right: 0px;
+		    border-radius: 2px;
+		}
+		.panel-google-plus > .panel-google-plus-tags {
+		    position: absolute;
+		    top: 35px;
+		    right: -3px;
+		}
+		.panel-google-plus > .panel-google-plus-tags > ul {
+		    list-style: none;
+		    padding: 0px;
+		    margin: 0px;
+		}
+		.panel-google-plus > .panel-google-plus-tags > ul:hover {
+		    box-shadow: 0px 0px 3px rgb(0, 0, 0);   
+		    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.25);   
+		}
+		.panel-google-plus > .panel-google-plus-tags > ul > li {
+		    display: block;
+		    right: 0px;
+		    width: 0px;
+		    padding: 5px 0px 5px 0px;
+		    background-color: rgb(245, 245, 245);
+		    font-size: 12px;
+		    overflow: hidden;
+		}
+		.panel-google-plus > .panel-google-plus-tags > ul > li::after {
+		    content:"";
+		    position: absolute;
+		    top: 0px;
+		    right: 0px;
+		    height: 100%;
+			border-right: 3px solid rgb(66, 127, 237);
+		}
+		.panel-google-plus > .panel-google-plus-tags > ul:hover > li,
+		.panel-google-plus > .panel-google-plus-tags > ul > li:first-child {
+		    padding: 5px 15px 5px 10px;
+		    width: auto;
+		    cursor: pointer;
+		    margin-left: auto;
+		}
+		.panel-google-plus > .panel-google-plus-tags > ul:hover > li {
+		    background-color: rgb(255, 255, 255);   
+		}
+		.panel-google-plus > .panel-google-plus-tags > ul > li:hover {
+		    background-color: rgb(66, 127, 237);
+		    color: rgb(255, 255, 255);
+		}
+		.panel-google-plus > .panel-heading,
+		.panel-google-plus > .panel-footer {
+		    background-color: rgb(255, 255, 255);
+		    border-width: 0px; 
+		}
+		.panel-google-plus > .panel-heading {
+		    margin-top: 20px;    
+		    padding-top: 0px;
+		    padding-bottom: 0px;
+		}
+		.panel-google-plus > .panel-heading > img { 
+		    margin-right: 15px;
+		}
+		.panel-google-plus > .panel-heading > h3 {
+		    margin: 0px;
+		    font-size: 14px;
+		    font-weight: 700;
+		}
+		.panel-google-plus > .panel-heading > h5 {
+		    color: rgb(153, 153, 153);
+		    font-size: 12px;
+		    font-weight: 400;
+		}
+		.panel-google-plus > .panel-body {
+		    padding-top: 10px;
+		    font-size: 13px;
+		    padding-bottom: 10px;
+		}
+		.panel-google-plus > .panel-body > .panel-google-plus-image {
+		    display: block;
+		    text-align: center;
+		    background-color: rgb(245, 245, 245);
+		    border: 1px solid rgb(217, 217, 217);
+		}
+		.panel-google-plus > .panel-body > .panel-google-plus-image > img {
+		    max-width: 100%;
+		}
+
+		.panel-google-plus > .panel-footer {
+		    padding-top: 0px;
+		    padding-bottom: 0px;
+		    margin-bottom: 10px;
+		    font-size: 14px;
+		    font-weight: 700;
+		}
+		.panel-google-plus > .panel-footer > .btn {
+		    float: left;
+		    margin-right: 8px;
+		}
+		.panel-google-plus > .panel-footer > .input-placeholder {
+		    display: block;
+		    margin-left: 98px;
+		    color: rgb(153, 153, 153);
+		    font-size: 12px;
+		    font-weight: 400;
+		    padding: 8px 6px 7px;
+		    border: 1px solid rgb(217, 217, 217);
+		    border-radius: 2px;
+		    box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
+		}
+		.panel-google-plus.panel-google-plus-show-comment > .panel-footer > .input-placeholder {
+		    display: none;   
+		}
+		.panel-google-plus > .panel-google-plus-comment {
+		    display: none;
+		    padding: 10px 20px 15px;
+		    border-top: 1px solid rgb(229, 229, 229);
+		    background-color: rgb(245, 245, 245);
+		}
+		.panel-google-plus.panel-google-plus-show-comment > .panel-google-plus-comment {
+		    display: block;
+		}
+		/*.panel-google-plus > .panel-google-plus-comment > img {
+		    float: left;   
+		}*/
+		.panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea {
+		    float: right;
+		    width: calc(100% - 56px);
+		}
+		.panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > textarea {
+		    display: block;
+		    /*margin-left: 60px;
+		    width: calc(100% - 56px);*/
+		    width: 100%;
+		    background-color: rgb(255, 255, 255);
+		    border: 1px solid rgb(217, 217, 217);
+		    box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
+		    resize: vertical;
+		}
+		.panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > .btn {
+		    margin-top: 10px;
+		    margin-right: 8px;
+		    width: 100%;
+		}
+		@media (min-width: 992px) {
+		    .panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > .btn {
+		        width: auto;
+		    }    
+		}
+		.panel-google-plus .btn {
+		    border-radius: 3px;   
+		}
+		.panel-google-plus .btn-default {
+		    border: 1px solid rgb(217, 217, 217);
+		    box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
+		}
+		.panel-google-plus .btn-default:hover, 
+		.panel-google-plus .btn-default:focus, 
+		.panel-google-plus .btn-default:active {
+		    background-color: rgb(255, 255, 255);
+		    border-color: rgb(0, 0, 0);    
 		}
 	</style>
 @stop
 @section("content")
 	<div class="starter-template">
-		<h1> Halo Charisma, </h1>
 		<div class="row">
-			<div class="col-sm-9 col-md-9">
-				<table>
-				<tr>
-					<td>
-						Lokasi anda adalah
-					</td>
-					<td colspan =2>
-						<span id="location">Press Refresh Button</span>
-						<button onclick="getLocation()"><img src="{{ URL::asset('img/refresh.png') }}" width = "30px" height = "25px"></button>
-					</td>
-					<tr>
-						<td>
-							Pasang Help di lokasi:
-						</td>
-						<td>
-							<input class="form-control" type="text" placeholder="Latitude">
-						</td>
-						<td>
-							<input class="form-control" type="text" placeholder="Longitude">
-						</td>
-					</tr>
-				</tr>
-				</table>
-				<br>
-				<p>Anggota anda adalah : </p>
-				<table class="table table-striped table-bordered table-hover table-condensed">
-					<tr>
-						<th>Nama</th>
-						<th>Status</th> 
-						<th>Latitude</th>
-						<th>Longitude</th>
-					</tr>
-					<tr>
-						<td>Jill</td>
-						<td>Berlangsung</td>
-						<td>107.60401689999999</td> 
-						<td>-6.8815501999999995</td>
-					</tr>
-					<tr>
-						<td>Eve</td>
-						<td>Sibuk</td> 
-						<td>110.60401689999999</td>
-						<td>-8.8815501999999995</td>
-					</tr>
-					<tr>
-						<td>Jack</td>
-						<td>Lagi di perjalanan</td> 
-						<td>111.60401689999999</td>
-						<td>-6.8815501999999995</td>
-					</tr>
-					<tr>
-						<td>Stephen</td>
-						<td>Sibuk</td> 
-						<td>118.60401689999999</td>
-						<td>-7.5815501999999995</td>
-					</tr>
-				</table>
-			</div>
-			<div class="col-sm-3 col-md-3">
-				<ul class="nav nav-tabs" role="tablist">
-					<li id="laporan" role="presentation" class="active tab"><a href="#">Laporan</a></li>
-					<li id="notifikasi" role="presentation" class="tab"><a href="#">Notifikasi</a></li>
-				</ul>
-				<table class="tableContainer" id="laporanContainer">
-					<tr>
-						<td>
-							<p>
-								Jill: Berhasil menyelamatkan 2 orang yang tertimbun di Lat -7.8904922 Long 103.609528 di Komplek Bunga. (10:30AM)
-							</p>
-							<p>
-								Jack: Butuh bantuan medik di Lat -6.7304922 Long 107.209528 di SMAN 3. Ada korban mengalami luka bakar yang serius. (11:32AM)
-							</p>
-						</td>
-					</tr>
-				</table>
-				<table class="tableContainer" id="notifikasiContainer">
-					<tr>
-						<td>
-							<p>
-								Charisma: Segera pergi ke lokasi Lat -7.8904922 Long 103.609528 di Komplek Bunga. Butuh sekitar 5 orang, ada korban yang tertimbun (10:00AM)
-							</p>
-							<p>
-								Charisma: Segera pergi ke lokasi Lat -6.7304922 Long 107.209528 di SMAN 3. Butuh bantuan medis, korban mengalami luka bakar. (11:33AM)
-							</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<form>
-								<input class="form-control" type="text" placeholder="Tuliskan notifikasi anda">
-							</form>
-						</td>
-					</tr>
-				</table>
-			</div>
+			<div class="[ col-xs-12 col-sm-6 ]">
+	            <div class="[ panel panel-default ] panel-google-plus">
+	                <div class="panel-body">
+	                	<textarea style="resize: none; width: 100%; border: none;" placeholder="Tuliskan notifikasi"></textarea>
+	                </div>
+	                <div class="panel-footer">
+	                    <button type="button" class="[ btn btn-default btn-xs ] map">
+	                        <span class="glyphicon glyphicon-map-marker"></span>(Posisi sekarang)
+	                    </button>
+	                </div>
+	                <div class="panel-google-plus-comment">
+	                	<div id="map-dummy-1" class="mini-map-canvas"></div>
+	                </div>
+	            </div>
+	            <div class="[ panel panel-default ] panel-google-plus">
+	                <div class="panel-heading">
+	                    <h3>Adiguna Sucipto</h3>
+	                    <h5><span>Jun 27, 2014</span></h5>
+	                </div>
+	                <div class="panel-body">
+	                    <p>Saya membutuhkan pertolongan pertama secepatnya sekarang juga. Siapapun yang bisa membantu tolong ke sini sesegara mungkin.</p>
+	                </div>
+	                <div class="panel-footer">
+	                    <button type="button" class="[ btn btn-default btn-xs ] map">
+	                        <span class="glyphicon glyphicon-map-marker"></span>
+	                    </button>
+	                </div>
+	                <div class="panel-google-plus-comment">
+	                	<div id="map-dummy-2" class="mini-map-canvas"></div>
+	                </div>
+	            </div>
+	            <div class="[ panel panel-default ] panel-google-plus">
+	                <div class="panel-heading">
+	                    <h3>Ridwan Kamil</h3>
+	                    <h5><span>Jun 27, 2014</span></h5>
+	                </div>
+	                <div class="panel-body">
+	                    <p>Saya membutuhkan 3 orang untuk membantu saya dalam mengangkat orang yang tertimpa batu.</p>
+	                </div>
+	                <div class="panel-footer">
+	                    <button type="button" class="[ btn btn-default btn-xs ] map">
+	                        <span class="glyphicon glyphicon-map-marker"></span>
+	                    </button>
+	                </div>
+	                <div class="panel-google-plus-comment">
+	                	<div id="map-dummy-3" class="mini-map-canvas"></div>
+	                </div>
+	            </div>
+	        </div>
+			<div class="[ col-xs-12 col-sm-6 ]">
+	            <div id="map-canvas"></div>
+	        </div>
 		</div>
 	</div>
 @stop
 @section("javascript")
+	<script src="https://maps.googleapis.com/maps/api/js?region=GB"></script>
 	<script type="text/javascript">
-		$("#laporan").addClass("active");
-		$("#notifikasiContainer").hide();
-		$(".nav-tabs li").click(function() {
-			$(".nav-tabs li").each(function(index) {
-				if ($(this).hasClass("active")) {
-					$(this).removeClass("active");
-					$("#"+$(this).attr('id')+"Container").hide();
-				}
-				else {
-					$(this).addClass("active");
-					$("#"+$(this).attr('id')+"Container").show();
-				}
-			});
-		});
-	</script>
-	<script>
-	var x = document.getElementById("location");
-	function getLocation() {
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(showPosition);
-		} else {
-			x.innerHTML = "Geolocation is not supported by this browser.";
-		}
-	}
-	function showPosition(position) {
-		x.innerHTML = "Latitude: " + position.coords.latitude + 
-		"<br>Longitude: " + position.coords.longitude; 
-	}
+		$("textarea").autosize();
+	   $('.panel-google-plus > .panel-footer > .map, .panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > button[type="reset"]').on('click', function(event) {
+	        var $panel = $(this).closest('.panel-google-plus');
+	            $comment = $panel.find('.panel-google-plus-comment');
+	        $panel.toggleClass('panel-google-plus-show-comment');
+	   });
 	</script>
 	<script type="text/javascript">
 		/* Fill in your javascript */
-		var x = document.getElementById("location");
-
-		function getLocation() {
-			if (navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(showPosition);
-			} else { 
-				x.innerHTML = "Geolocation is not supported by this browser.";
-			}
-		}
-
-		function showPosition(position) {
-			x.innerHTML = "Latitude: " + position.coords.latitude + 
-			" Longitude: " + position.coords.longitude;	
-		}
+		var stockholm = new google.maps.LatLng(-6.8815501,107.604016);
+		var mapOptions = {
+			zoom: 17,
+			center: stockholm
+		};
+		var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+		var mapdummy = new google.maps.Map(document.getElementById('map-dummy-1'),mapOptions);
+		var mapdummy2 = new google.maps.Map(document.getElementById('map-dummy-2'),mapOptions);
+		var mapdummy3 = new google.maps.Map(document.getElementById('map-dummy-3'),mapOptions);
 	</script>
 @stop
