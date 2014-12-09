@@ -16,7 +16,7 @@ class UserController extends BaseController {
 	*/
 	public function showKoordinator()
 	{
-		return View::make('kevin.koordinator')->withCookie(Cookie::forever('name', 'value', $minutes));;
+		return View::make('kevin.koordinator');
 	}
 	public function showRelawan()
 	{
