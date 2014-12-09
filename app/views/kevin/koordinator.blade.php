@@ -254,6 +254,40 @@
 	            $comment = $panel.find('.panel-google-plus-comment');
 	        $panel.toggleClass('panel-google-plus-show-comment');
 	   });
+		$('textarea').keyup(function(e){
+			if(e.keyCode == 13)
+			{
+				var text = $(this).val();
+				$(this).val("");
+				var panelgoogleplusDiv = document.createElement("div");
+				$(panelgoogleplusDiv).addClass("[ panel panel-default ] panel-google-plus");
+
+				var panelheadingDiv = document.createElement("div");
+				$(panelheadingDiv).addClass("panel-heading");
+				$(panelheadingDiv).append("<h3>"+"Kevin Huang"+"</h3>");
+				$(panelheadingDiv).append("<h5><span>"+(new Date()).toUTCString()+"</span></h5>");
+				
+				var panelbodyDiv = document.createElement("div");
+				$(panelbodyDiv).addClass("panel-body");
+				$(panelbodyDiv).append("<p>"+text+"</p>");
+				
+				var panelfooterDiv = document.createElement("div");
+				$(panelfooterDiv).addClass("panel-footer");
+				$(panelfooterDiv).append('<button type="button" class="[ btn btn-default btn-xs ] map"><span class="glyphicon glyphicon-map-marker"></span></button>');
+				
+				var panelcommentDiv = document.createElement("div");
+				$(panelcommentDiv).addClass("panel-google-plus-comment");
+				$(panelcommentDiv).append('<div id="map-dummy-3" class="mini-map-canvas"></div>');
+
+				$(panelgoogleplusDiv).append($(panelheadingDiv));
+				$(panelgoogleplusDiv).append($(panelbodyDiv));
+				$(panelgoogleplusDiv).append($(panelfooterDiv));
+				$(panelgoogleplusDiv).append($(panelcommentDiv));
+				var $panel = $(this).closest('.panel-google-plus');
+				$(panelgoogleplusDiv).insertAfter($panel);
+				console.log("gila");
+			}
+		});
 	</script>
 	<script type="text/javascript">
 		/* Fill in your javascript */
