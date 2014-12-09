@@ -26,6 +26,9 @@ Route::get('bencana/user/relawan', [
 Route::get('bencana/user/koordinator', [
 	"uses" => "UserController@showKoordinator",
 ]);
+Route::post('bencana/user/koordinator', [
+	"uses" => "UserController@doKoordinator",
+]);
 Route::get('bencana/admin/logistik', [
 	"uses" => "AdminController@showLogistic",
 ]);

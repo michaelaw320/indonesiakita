@@ -120,7 +120,7 @@
 					<h1>
 						Rp 23.000.000
 					</h1>
-				dari Rp. 11.250.000
+				sudah terdonasi dari Rp. 11.250.000 (target donasi)
 				</p>
 				<a id="donateBtn" href="bencana/donasi" class="btn btn-lg btn-success">Donasi</a>
 				<h2>Kondisi Bencana</h2>

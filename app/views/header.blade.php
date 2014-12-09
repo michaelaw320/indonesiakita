@@ -16,12 +16,12 @@
 						Anda belum login <b class="caret"></b>
 					</a>
 					<ul class="dropdown-menu">
-						<form class="navbar-form" role="form">
+						<form class="navbar-form" role="form" action="login" method="post">
 							<div class="form-group">
-								<input class="form-control" type="text" placeholder="Username">
+								<input class="form-control" type="text" placeholder="Username" name="username">
 							</div>
 							<div class="form-group">
-								<input class="form-control" type="password" placeholder="Password">
+								<input class="form-control" type="password" placeholder="Password" name="password">
 							</div>
 								<button class="col-md-6 col-middle btn btn-success" type="submit">Login</button>
 								<a class="col-md-6 col-middle btn btn-warning">

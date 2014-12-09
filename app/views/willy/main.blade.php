@@ -12,7 +12,7 @@
 	<div class="starter-template">
 		<h1>Jadilah Relawan</h1>
 		<p class="lead">Mari kita bantu sesama untuk membuat Indonesia yang lebih baik. <br> Bila setiap dari kita menolong 1 orang tiap hari. Negara Indonesia bakal menjadi negara yang terbahagia.</p>
-		<canvas id="map">
+		<canvas id="map"></canvas>
 	</div>
 @stop
 @section("javascript")

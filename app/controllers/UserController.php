@@ -14,10 +14,9 @@ class UserController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome');
 	|
 	*/
-	
 	public function showKoordinator()
 	{
-		return View::make('kevin.koordinator');
+		return View::make('kevin.koordinator')->withCookie(Cookie::forever('name', 'value', $minutes));;
 	}
 	public function showRelawan()
 	{
