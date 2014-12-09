@@ -87,7 +87,7 @@
 
 		 function initialize() {
 		 	var mapOptions = {
-		 		zoom: 5,
+		 		zoom: 4,
 		 		center: indonesia
 		 	};
 		 	var map = new google.maps.Map(document.getElementById('map'),mapOptions);

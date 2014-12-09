@@ -197,7 +197,7 @@
 	                </div>
 	                <div class="panel-footer">
 	                    <button type="button" class="[ btn btn-default btn-xs ] map">
-	                        <span class="glyphicon glyphicon-map-marker"></span>(Posisi sekarang)
+	                        <span class="glyphicon glyphicon-map-marker"></span>
 	                    </button>
 	                </div>
 	                <div class="panel-google-plus-comment">
@@ -210,7 +210,7 @@
 	                    <h5><span>Jun 27, 2014</span></h5>
 	                </div>
 	                <div class="panel-body">
-	                    <p>Saya membutuhkan pertolongan pertama secepatnya sekarang juga. Siapapun yang bisa membantu tolong ke sini sesegara mungkin.</p>
+	                    <p>Budi membutuhkan bantuan untuk melakukan pertolongan pertama secepatnya sekarang juga. Jill dan Eve harap segera menuju ke lokasi Budi.</p>
 	                </div>
 	                <div class="panel-footer">
 	                    <button type="button" class="[ btn btn-default btn-xs ] map">
@@ -227,7 +227,7 @@
 	                    <h5><span>Jun 27, 2014</span></h5>
 	                </div>
 	                <div class="panel-body">
-	                    <p>Saya membutuhkan 3 orang untuk membantu saya dalam mengangkat orang yang tertimpa batu.</p>
+	                    <p>Stephen membutuhkan 3 orang untuk membantunya dalam mengangkat orang yang tertimpa batu. Ahmad,Bambang dan Thomas segere ke lokasi Stephen</p>
 	                </div>
 	                <div class="panel-footer">
 	                    <button type="button" class="[ btn btn-default btn-xs ] map">
@@ -291,14 +291,134 @@
 	</script>
 	<script type="text/javascript">
 		/* Fill in your javascript */
-		var stockholm = new google.maps.LatLng(-6.8815501,107.604016);
+		var stockholm = new google.maps.LatLng(-7.45559,108.88026);
+		var locuser1 = new google.maps.LatLng(-7.45669,108.87936);
+		var locuser2 = new google.maps.LatLng(-7.45779,108.87246);
+		var locuser3 = new google.maps.LatLng(-7.45889,108.87536);
+		var locuser4 = new google.maps.LatLng(-7.45999,108.88426);
 		var mapOptions = {
 			zoom: 17,
 			center: stockholm
 		};
-		var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
-		var mapdummy = new google.maps.Map(document.getElementById('map-dummy-1'),mapOptions);
-		var mapdummy2 = new google.maps.Map(document.getElementById('map-dummy-2'),mapOptions);
-		var mapdummy3 = new google.maps.Map(document.getElementById('map-dummy-3'),mapOptions);
+		//var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+		function initialize() {
+		 	var mapOptions = {
+		 		zoom: 15,
+		 		center: stockholm
+		 	};
+		 	var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+		 	var mapdummy = new google.maps.Map(document.getElementById('map-dummy-1'),mapOptions);
+			var mapdummy2 = new google.maps.Map(document.getElementById('map-dummy-2'),mapOptions);
+			var mapdummy3 = new google.maps.Map(document.getElementById('map-dummy-3'),mapOptions);
+			helpmarker1 = new google.maps.Marker({
+		 		map:mapdummy2,
+		 		position: locuser1,
+		 		icon : '{{ URL::asset('img/idleuser.png') }}',
+		 		size: new google.maps.Size(1, 32),
+		 	});
+			helpmarker2 = new google.maps.Marker({
+		 		map:mapdummy3,
+		 		position: locuser2,
+		 		icon : '{{ URL::asset('img/helpicon.png') }}',
+		 		size: new google.maps.Size(1, 32),
+		 	});
+			
+		}
+	</script>
+	<script type="text/javascript">
+		 var stockholm = new google.maps.LatLng(-7.45559,108.88026);
+		 var locuser1 = new google.maps.LatLng(-7.45669,108.87936);
+		 var locuser2 = new google.maps.LatLng(-7.45779,108.87246);
+		 var locuser3 = new google.maps.LatLng(-7.45889,108.87536);
+		 var locuser4 = new google.maps.LatLng(-7.45999,108.88426);
+		 var map;
+
+		 function initialize() {
+		 	var mapOptions = {
+		 		zoom: 15,
+		 		center: stockholm
+		 	};
+		 	var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+		 	usermarker1 = new google.maps.Marker({
+		 		map:map,
+		 		position: locuser1,
+		 		title : 'Jill : Kondisi Sibuk',
+		 		icon : '{{ URL::asset('img/idleuser.png') }}',
+		 		size: new google.maps.Size(1, 32),
+		 	});
+		 	usermarker2 = new google.maps.Marker({
+		 		map:map,
+		 		position: locuser2,
+		 		title : 'Stephen : Siap sedia',
+		 		icon : '{{ URL::asset('img/busyuser.png') }}',
+		 		size: new google.maps.Size(1, 32),
+		 	});
+		 	usermarker3 = new google.maps.Marker({
+		 		map:map,
+		 		position: locuser3,
+		 		title : 'Jack : Siap sedia',
+		 		icon : '{{ URL::asset('img/idleuser.png') }}',
+		 		size: new google.maps.Size(1, 32),
+		 	});
+		 	usermarker4 = new google.maps.Marker({
+		 		map:map,
+		 		position: locuser4,
+		 		title : 'Eve : Sibuk',
+		 		icon : '{{ URL::asset('img/busyuser.png') }}',
+		 		size: new google.maps.Size(1, 32),
+		 	});
+		 	var infowindow1 = new google.maps.InfoWindow({
+		 	  content:"Jill<br>Kondisi Sibuk<br>"
+		 	  });
+			var infowindow2 = new google.maps.InfoWindow({
+			  content:"Stephen<br>Kondisi Siap Sedia<br>"
+			  });
+			var infowindow3 = new google.maps.InfoWindow({
+			  content:"Jack<br>Kondisi Siap Sedia<br>"
+			  });
+			var infowindow4 = new google.maps.InfoWindow({
+			  content:"Eve<br>Kondisi Sibuk<br>"
+			  });
+
+		 	google.maps.event.addListener(usermarker1, 'click', function() {
+		 	  infowindow1.open(map,usermarker1);
+			  infowindow2.close();
+			  infowindow3.close();
+			  infowindow4.close();
+		 	  });
+			google.maps.event.addListener(usermarker2, 'click', function() {
+		 	  infowindow2.open(map,usermarker2);
+			  infowindow1.close();
+			  infowindow3.close();
+			  infowindow4.close();
+		 	  });
+			google.maps.event.addListener(usermarker3, 'click', function() {
+		 	  infowindow3.open(map,usermarker3);
+			  infowindow2.close();
+			  infowindow1.close();
+			  infowindow4.close();
+		 	  });
+			google.maps.event.addListener(usermarker4, 'click', function() {
+		 	  infowindow4.open(map,usermarker4);
+			  infowindow2.close();
+			  infowindow3.close();
+			  infowindow1.close();
+		 	  });
+		 }
+		 google.maps.event.addDomListener(window, 'load', initialize);
+		
+		// var x = document.getElementById("location");
+		// function getLocation() {
+		// 	if (navigator.geolocation) {
+		// 	if (navigator.geolocation) {
+		// 		navigator.geolocation.getCurrentPosition(showPosition);
+		// 	} else {
+		// 		x.innerHTML = "Geolocation is not supported by this browser.";
+		// 	}
+		// }
+		// function showPosition(position) {
+		// 	x.innerHTML = "Latitude: " + position.coords.latitude + 
+		// 	"<br>Longitude: " + position.coords.longitude; 
+		// }
 	</script>
 @stop

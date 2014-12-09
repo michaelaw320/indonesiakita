@@ -262,7 +262,7 @@
 	</script>
 	<script type="text/javascript">
 		/* Fill in your javascript */
-		var stockholm = new google.maps.LatLng(-6.8815501,107.604016);
+		var stockholm = new google.maps.LatLng(-7.45559,108.88026);
 		var mapOptions = {
 			zoom: 20,
 			center: stockholm
@@ -293,52 +293,6 @@
 		 		icon : '{{ URL::asset('img/idleuser.png') }}',
 		 		size: new google.maps.Size(1, 32),
 		 	});
-		 	usermarker2 = new google.maps.Marker({
-		 		map:map,
-		 		position: locuser2,
-		 		title : 'Stephen : Siap sedia',
-		 		icon : '{{ URL::asset('img/busyuser.png') }}',
-		 		size: new google.maps.Size(1, 32),
-		 	});
-		 	usermarker3 = new google.maps.Marker({
-		 		map:map,
-		 		position: locuser3,
-		 		title : 'Jack : Siap sedia',
-		 		icon : '{{ URL::asset('img/idleuser.png') }}',
-		 		size: new google.maps.Size(1, 32),
-		 	});
-		 	usermarker4 = new google.maps.Marker({
-		 		map:map,
-		 		position: locuser4,
-		 		title : 'Eve : Sibuk',
-		 		icon : '{{ URL::asset('img/busyuser.png') }}',
-		 		size: new google.maps.Size(1, 32),
-		 	});
-		 	var infowindow1 = new google.maps.InfoWindow({
-		 	  content:"Jill<br>Kondisi Sibuk<br>"
-		 	  });
-			var infowindow2 = new google.maps.InfoWindow({
-			  content:"Stephen<br>Kondisi Siap Sedia<br>"
-			  });
-			var infowindow3 = new google.maps.InfoWindow({
-			  content:"Jack<br>Kondisi Siap Sedia<br>"
-			  });
-			var infowindow4 = new google.maps.InfoWindow({
-			  content:"Eve<br>Kondisi Sibuk<br>"
-			  });
-
-		 	google.maps.event.addListener(usermarker1, 'click', function() {
-		 	  infowindow1.open(map,usermarker1);
-		 	  });
-			google.maps.event.addListener(usermarker2, 'click', function() {
-		 	  infowindow2.open(map,usermarker2);
-		 	  });
-			google.maps.event.addListener(usermarker3, 'click', function() {
-		 	  infowindow3.open(map,usermarker3);
-		 	  });
-			google.maps.event.addListener(usermarker4, 'click', function() {
-		 	  infowindow4.open(map,usermarker4);
-		 	  });
 		 }
 		 google.maps.event.addDomListener(window, 'load', initialize);
 		
