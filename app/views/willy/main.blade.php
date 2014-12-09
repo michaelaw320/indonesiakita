@@ -6,17 +6,21 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
+		.mini-map-canvas {
+			width: 100%;
+			height: 400px;
+		}
 	</style>
 @stop
 @section("content")
 	<div class="starter-template">
 		<h1>Jadilah Relawan</h1>
 		<p class="lead">Mari kita bantu sesama untuk membuat Indonesia yang lebih baik. <br> Bila setiap dari kita menolong 1 orang tiap hari. Negara Indonesia bakal menjadi negara yang terbahagia.</p>
-		<canvas id="map">
+		<div id="map" class="mini-map-canvas"></div>
 	</div>
 @stop
 @section("javascript")
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 		var canvas = document.getElementById('map');
 		canvas.width = 1024;
 		canvas.height = 366;
@@ -73,6 +77,43 @@
 				window.location = "bencana";
 			}
 		}
-		console.log("gila");
+	</script>-->
+	<script src="https://maps.googleapis.com/maps/api/js?region=GB"></script>
+	<script type="text/javascript">
+		 var indonesia = new google.maps.LatLng(-0.77477,115.68973);
+		 var gunungsinabung = new google.maps.LatLng(2.77477,97.68973);
+		 var banjirjakarta = new google.maps.LatLng(-6.20876,106.84560);	
+		 var map;
+
+		 function initialize() {
+		 	var mapOptions = {
+		 		zoom: 5,
+		 		center: indonesia
+		 	};
+		 	var map = new google.maps.Map(document.getElementById('map'),mapOptions);
+		 	marker1 = new google.maps.Marker({
+		 		map:map,
+		 		position: gunungsinabung,
+		 		title : 'Gunung Sinabung Meletus',
+		 		size: new google.maps.Size(1, 32),
+		 	});
+			
+		 	marker2 = new google.maps.Marker({
+		 		map:map,
+		 		position: banjirjakarta,
+		 		title : 'Gunung Sinabung Meletus',
+		 		size: new google.maps.Size(1, 32),
+		 	});
+
+		 	google.maps.event.addListener(marker1, 'click', function() {
+		 	  //infowindow.open(map,campmarker);
+			  window.location  = "bencana";
+		 	  });
+		 	google.maps.event.addListener(marker2, 'click', function() {
+		 	  //infowindow.open(map,campmarker);
+			  window.location  = "bencana";
+		 	  });
+		 }
+		 google.maps.event.addDomListener(window, 'load', initialize);
 	</script>
 @stop
