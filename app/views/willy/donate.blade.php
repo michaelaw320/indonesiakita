@@ -11,28 +11,23 @@
 @stop
 @section("content")
 	<img id="splash" src="{{ URL::asset('img/splash-donate.jpg') }}">
-	<div class="starter-template">
+	<div class="starter-template" ng-app="splashDemo" ng-controller="MainCtrl as main">
 		<h1>Donasi</h1>
 
 		<div class="panel with-nav-tabs panel-default">
 		    <div class="panel-heading">
 	            <ul class="nav nav-tabs">
 	                <li class="active"><a href="#via_kartuKredit" data-toggle="tab">Kartu Kredit</a></li>
-	                <li><a href="#via_cimbClicks" data-toggle="tab">Cimb Clicks</a></li>
-	                <li><a href="#via_mandiriClickPay" data-toggle="tab">Mandiri Click Pay</a></li>
-	                <li><a href="#via_mandiriECash" data-toggle="tab">Mandiri e-Cash</a></li>
-	                <li><a href="#via_bcaKlikpay" data-toggle="tab">BCA Klikpay</a></li>
-	                <li><a href="#via_mandiriDebitVbV" data-toggle="tab">Mandiri Debit VbV</a></li>
-	                <li><a href="#via_bniDebitOnline" data-toggle="tab">BNI Debit Online</a></li>
+	                <li><a href="#via_kartuKredit" data-toggle="tab">Cimb Clicks</a></li>
+	                <li><a href="#via_kartuKredit" data-toggle="tab">Mandiri Click Pay</a></li>
+	                <li><a href="#via_kartuKredit" data-toggle="tab">Mandiri e-Cash</a></li>
+	                <li><a href="#via_kartuKredit" data-toggle="tab">BCA Klikpay</a></li>
+	                <li><a href="#via_kartuKredit" data-toggle="tab">Mandiri Debit VbV</a></li>
+	                <li><a href="#via_kartuKredit" data-toggle="tab">BNI Debit Online</a></li>
 	            </ul>
 		    </div>
 		    <div class="panel-body">
 		        <div class="tab-content">
-		            <div class="tab-pane fade in active" id="tab1default">Default 1</div>
-		            <div class="tab-pane fade" id="tab2default">Default 2</div>
-		            <div class="tab-pane fade" id="tab3default">Default 3</div>
-		            <div class="tab-pane fade" id="tab4default">Default 4</div>
-		            <div class="tab-pane fade" id="tab5default">Default 5</div>
 		            <div id="via_kartuKredit" class="tab-pane fade in active">
 						<form class="navbar-form" role="form">
 							<div class="row">
@@ -383,7 +378,7 @@
 											</h3>
 										</div>
 									</div>
-									<a id="donateBtn" href="bencana/donasi" class="btn btn-lg btn-success">Donasi</a>
+									<a id="donateBtn" class="btn btn-lg btn-success" ng-click="main.openSplash()">Donasi</a>
 									<div style="padding-top: 10px;">
 										<img src="{{ URL::asset('img/verisign.jpg') }}" style="width:100%;">
 									</div>
@@ -406,5 +401,56 @@
 	<script type="text/javascript">
 		/* Fill in your javascript */
 		$('#cvvhelp').popover();
+	</script>
+	<script type="text/javascript">
+		// Module for the demo
+		angular.module('splashDemo', ['ui.splash'])
+		.controller('MainCtrl', ['$splash', function ($splash) {
+		  this.openSplash = function () {
+		    $splash.open({
+		      title: 'Terima kasih telah melakukan donasi!',
+		      message: ""
+		    });
+		  };
+		}]);
+
+		// Re-usable $splash module
+		angular.module('ui.splash', ['ui.bootstrap'])
+		.service('$splash', [
+		  '$modal',
+		  '$rootScope',
+		  function($modal, $rootScope) {
+		    return {
+		      open: function (attrs, opts) {
+		        var scope = $rootScope.$new();
+		        angular.extend(scope, attrs);
+		        opts = angular.extend(opts || {}, {
+		          backdrop: false,
+		          scope: scope,
+		          templateUrl: 'splash/content.html',
+		          windowTemplateUrl: 'splash/index.html'
+		        });
+		        return $modal.open(opts);
+		      }
+		    };
+		  }
+		])
+		.run([
+		  '$templateCache',
+		  function ($templateCache) {
+		    $templateCache.put('splash/index.html',
+		      '<section class="splash" ng-class="{\'splash-open\': animate}" ng-style="{\'z-index\': 1000, display: \'block\'}" ng-click="close($event)">' +
+		      '  <div class="splash-inner" ng-transclude></div>' +
+		      '</section>'
+		    );
+		    $templateCache.put('splash/content.html',
+		      '<div class="splash-content text-center">' +
+		      '  <h1 ng-bind="title"></h1>' +
+		      '  <p class="lead" ng-bind="message"></p>' +
+		      '  <a class="btn btn-lg btn-outline" ng-bind="btnText || \'Ok\'" ng-click="$close()" href="http://localhost/indonesiakita/public/bencana"></a>' +
+		      '</div>'
+		    );
+		  }
+		]);
 	</script>
 @stop

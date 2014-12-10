@@ -5,7 +5,7 @@
 	</style>
 @stop
 @section("content")
-	<div class="starter-template">
+	<div class="starter-template" ng-app="splashDemo" ng-controller="MainCtrl as main">
 		<!-- Tab Header -->
 		<nav class="navbar navbar-default" role="navigation">
 		  <div class="container-fluid">
@@ -169,7 +169,7 @@
 				  </select>
 				  <br>
 				  <button type="button" class="btn btn-danger">Tolak</button>
-				  <button type="button" class="btn btn-primary">Terima</button>
+				  <button type="button" class="btn btn-primary" ng-click="main.openSplash()">Terima</button>
 				  <br>
 				</div>
 			</div>
@@ -188,6 +188,57 @@
 	</div>
 @stop
 @section("javascript")
+	<script type="text/javascript">
+		// Module for the demo
+		angular.module('splashDemo', ['ui.splash'])
+		.controller('MainCtrl', ['$splash', function ($splash) {
+		  this.openSplash = function () {
+		    $splash.open({
+		      title: 'Perubahan telah disimpan!',
+		      message: ""
+		    });
+		  };
+		}]);
+
+		// Re-usable $splash module
+		angular.module('ui.splash', ['ui.bootstrap'])
+		.service('$splash', [
+		  '$modal',
+		  '$rootScope',
+		  function($modal, $rootScope) {
+		    return {
+		      open: function (attrs, opts) {
+		        var scope = $rootScope.$new();
+		        angular.extend(scope, attrs);
+		        opts = angular.extend(opts || {}, {
+		          backdrop: false,
+		          scope: scope,
+		          templateUrl: 'splash/content.html',
+		          windowTemplateUrl: 'splash/index.html'
+		        });
+		        return $modal.open(opts);
+		      }
+		    };
+		  }
+		])
+		.run([
+		  '$templateCache',
+		  function ($templateCache) {
+		    $templateCache.put('splash/index.html',
+		      '<section class="splash" ng-class="{\'splash-open\': animate}" ng-style="{\'z-index\': 1000, display: \'block\'}" ng-click="close($event)">' +
+		      '  <div class="splash-inner" ng-transclude></div>' +
+		      '</section>'
+		    );
+		    $templateCache.put('splash/content.html',
+		      '<div class="splash-content text-center">' +
+		      '  <h1 ng-bind="title"></h1>' +
+		      '  <p class="lead" ng-bind="message"></p>' +
+		      '  <button class="btn btn-lg btn-outline" ng-bind="btnText || \'Ok\'" ng-click="$close()"></button>' +
+		      '</div>'
+		    );
+		  }
+		]);
+	</script>
 	<script type="text/javascript">
 		/* Fill in your javascript */
 	</script>

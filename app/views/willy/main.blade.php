@@ -16,11 +16,11 @@
 	<div class="starter-template">
 		<h1>Jadilah Relawan</h1>
 		<p class="lead">Mari kita bantu sesama untuk membuat Indonesia yang lebih baik. <br> Bila setiap dari kita menolong 1 orang tiap hari. Negara Indonesia bakal menjadi negara yang terbahagia.</p>
-		<div id="map" class="mini-map-canvas"></div>
+		<canvas id="map"></canvas>
 	</div>
 @stop
 @section("javascript")
-	<!--<script type="text/javascript">
+	<script type="text/javascript">
 		var canvas = document.getElementById('map');
 		canvas.width = 1024;
 		canvas.height = 366;
@@ -77,8 +77,8 @@
 				window.location = "bencana";
 			}
 		}
-	</script>-->
-	<script src="https://maps.googleapis.com/maps/api/js?region=GB"></script>
+	</script>
+	<!--<script src="https://maps.googleapis.com/maps/api/js?region=GB"></script>
 	<script type="text/javascript">
 		 var indonesia = new google.maps.LatLng(-0.77477,115.68973);
 		 var gunungsinabung = new google.maps.LatLng(2.77477,97.68973);
@@ -115,5 +115,5 @@
 		 	  });
 		 }
 		 google.maps.event.addDomListener(window, 'load', initialize);
-	</script>
+	</script>-->
 @stop

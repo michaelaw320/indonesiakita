@@ -306,7 +306,6 @@
 		 		zoom: 15,
 		 		center: stockholm
 		 	};
-		 	var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 		 	var mapdummy = new google.maps.Map(document.getElementById('map-dummy-1'),mapOptions);
 			var mapdummy2 = new google.maps.Map(document.getElementById('map-dummy-2'),mapOptions);
 			var mapdummy3 = new google.maps.Map(document.getElementById('map-dummy-3'),mapOptions);
@@ -322,23 +321,7 @@
 		 		icon : '{{ URL::asset('img/helpicon.png') }}',
 		 		size: new google.maps.Size(1, 32),
 		 	});
-			
-		}
-	</script>
-	<script type="text/javascript">
-		 var stockholm = new google.maps.LatLng(-7.45559,108.88026);
-		 var locuser1 = new google.maps.LatLng(-7.45669,108.87936);
-		 var locuser2 = new google.maps.LatLng(-7.45779,108.87246);
-		 var locuser3 = new google.maps.LatLng(-7.45889,108.87536);
-		 var locuser4 = new google.maps.LatLng(-7.45999,108.88426);
-		 var map;
-
-		 function initialize() {
-		 	var mapOptions = {
-		 		zoom: 15,
-		 		center: stockholm
-		 	};
-		 	var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+			var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 		 	usermarker1 = new google.maps.Marker({
 		 		map:map,
 		 		position: locuser1,
@@ -404,7 +387,15 @@
 			  infowindow3.close();
 			  infowindow1.close();
 		 	  });
-		 }
+		}
+	</script>
+	<script type="text/javascript">
+		 var stockholm = new google.maps.LatLng(-7.45559,108.88026);
+		 var locuser1 = new google.maps.LatLng(-7.45669,108.87936);
+		 var locuser2 = new google.maps.LatLng(-7.45779,108.87246);
+		 var locuser3 = new google.maps.LatLng(-7.45889,108.87536);
+		 var locuser4 = new google.maps.LatLng(-7.45999,108.88426);
+		 var map;
 		 google.maps.event.addDomListener(window, 'load', initialize);
 		
 		// var x = document.getElementById("location");
